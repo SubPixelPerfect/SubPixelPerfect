@@ -36,13 +36,13 @@ git config --global -l
    </html>
    ```
 
-3. Ste is up on youname.github.io
+3. Site is up on youname.github.io
 
 ## Jekyll
 
 Install a **Ruby+Devkit** version from [RubyInstaller Downloads](https://rubyinstaller.org/downloads/).
 
-crate `_config.yml`
+create `_config.yml`
 
 ```yml
 repository: SubPixelPerfect/SubPixelPerfect.github.io
@@ -58,8 +58,19 @@ gem "github-pages", group: :jekyll_plugins
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 ```
 
+and `.gitihnore`
+
+```
+_site/
+```
+
 run `bundle install`
 run `bundle exec jekyll serve`
 
 local site is up on http://127.0.0.1:4000
+
+`git commit -a -m 'jekyll'`
+`git push`
+
+done: Jekyll site deployed to GitHub
 
