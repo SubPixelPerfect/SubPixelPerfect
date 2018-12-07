@@ -3,6 +3,6 @@ title: Open Mind
 layout: default
 ---
 
-# Hello World
+# Hello Jekyll
 
 I'm hosted with GitHub Pages.
