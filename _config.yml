@@ -2,8 +2,8 @@
 repository: SubPixelPerfect/SubPixelPerfect.github.io
 
 # Markdown renderer config
-#kramdown:
-#  hard_wrap: true
+kramdown:
+  hard_wrap: true
 
-#sass:
-#  style: compact # possible values: nested expanded compact compressed  
+sass:
+  style: compact # possible values: nested expanded compact compressed  
