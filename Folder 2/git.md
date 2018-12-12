@@ -1,4 +1,8 @@
-# GIT 
+---
+categories: [git, ok]
+---
+
+# GIT
 
 To push as different user  [link](https://medium.com/@bivil/you-can-configure-an-individual-repo-to-use-a-specific-user-email-address-which-overrides-the-6e5f6521d5c9)
 
@@ -16,27 +20,33 @@ git config --local -l
 git config --global -l
 ```
 
+## level3
 
+dfgfdgh
+sdhfg
 
+### level 4
 
+sdfh
+sh
+dfgj
 
 ## Hello GitHub
 
-1. Go to github and create repo named youname.github.io
+Go to github and create repo named youname.github.io
+Crate file `index.html`
 
-2. Crate file `index.html`
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Hello World</h1>
+        <p>I'm hosted with GitHub Pages.</p>
+    </body>
+</html>
+```
 
-   ```html
-   <!DOCTYPE html>
-   <html>
-       <body>
-           <h1>Hello World</h1>
-           <p>I'm hosted with GitHub Pages.</p>
-       </body>
-   </html>
-   ```
-
-3. Site is up on youname.github.io
+Site is up on youname.github.io
 
 ## Jekyll
 
@@ -60,7 +70,7 @@ gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
 and `.gitihnore`
 
-```
+```bash
 _site/
 ```
 
@@ -73,4 +83,3 @@ local site is up on http://127.0.0.1:4000
 `git push`
 
 done: Jekyll site deployed to GitHub
-

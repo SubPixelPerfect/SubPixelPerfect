@@ -1,0 +1,107 @@
+h1{
+    color: #CF0;    
+}
+
+
+html, body{ 
+  height: 100%;
+} 
+
+.content-wrapper{
+    display: flex;
+    height: 100%;
+    .sidebar {
+        flex-shrink: 0;
+        background-color: rgb(49, 49, 49);
+        color: rgb(161, 161, 161);
+        width: 360px;
+        /* border-right: 1px solid #EEE; */
+        padding: 80px 30px 80px;
+        overflow-y: auto;
+        height: 100%;
+    }
+  
+    .main {     
+        position: relative;   
+        background-color: rgb(66, 66, 66);
+        color: rgb(182, 182, 182);
+
+        flex-grow: 10;
+        padding: 80px 80px 120px;
+
+        overflow-y: auto;
+        height: 100%;
+    }
+}
+
+
+div.highlight{
+    border-radius: 4px;
+    box-shadow: inset 0 0 10px#0000004d;
+    background-color: #353636;
+}
+pre.highlight{
+    background: transparent;
+    padding: 10px;
+}
+code.highlighter-rouge{
+    background-color: #333;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+*::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 20px rgba(128,128,128,.5);
+}
+.sidebar::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 20px rgba(128,128,128,0);
+}
+.sidebar:hover::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 20px rgba(128,128,128,.5);
+}
+
+
+
+
+.tocnav{
+
+    margin-bottom: 20px;
+    ul{
+        list-style: none;
+        //padding-left: 20px;
+        //margin-left: 10px;
+        overflow: hidden;
+        margin-bottom: 5px;
+    }
+    a{ 
+        //border-radius: 5px;  
+        border-left: 2px solid transparent;
+        line-height: 1.2em;
+    }    
+    a:hover{ 
+        color: rgb(92, 149, 255) !important;
+        border-left: 2px solid rgb(92, 149, 255) !important;
+     }    
+    li> a{  padding : 8px 8px 8px 18px; font-size: 1em;   }
+    li li> a{  padding : 8px 8px 8px 28px; font-size: .85em;    }
+    li li li> a{  padding : 8px 8px 8px 38px; font-size: .75em;   }
+
+    a.active{
+        // background-color: #111;
+        color: #F0F;
+        border-left: 2px solid rgb(255, 0, 255);
+    }
+
+    a:not(.active)+ul{
+        display: none;
+    }
+
+}
+

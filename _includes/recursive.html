@@ -1,0 +1,42 @@
+
+{%- assign arr = '' | split: ',' -%}
+{%- assign arr1 = 'a,b' | split: ',' -%}
+{%- assign arr2 = 'c,d' | split: ',' -%}
+
+{%- assign arr = arr | concat: arr1 -%}
+{%- assign arr = arr | concat: arr2 -%}
+
+{% for item in arr %}   
+    {{item}}
+{% endfor %} 
+
+{{arr[0]}}
+
+
+{%- comment -%} 
+
+{% assign depth = include.depth | default: 0 %}
+<div style="padding: 5px; border: solid 2px #222; border-radius: 5px;">
+<span style="background: #063;"> in[{{depth}},{{i}}] </span>
+
+
+{% assign _i = include.i | default: 0 %}
+
+{% if depth < 2 %}
+
+    {% assign depthPreFor = depth  %}
+    {% assign depthPlus1 = depth | plus: 1 %}
+    {% for i in (1..2) %}   
+        {% include recursive.html depth = depthPlus1 i=i %}
+    {% endfor %} 
+
+    
+    {% assign depth = depthPreFor %}
+
+{% endif %}
+
+{% assign i = _i %}
+<span style="background: #620;"> out[{{depth}},{{i}}] </span> 
+</div>
+
+ {%- endcomment -%}

@@ -1,19 +1,53 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+  {%- include head.html -%}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  </head>
   <body>
-        <div class="container" id="content" tabindex="-1"> 
-            {{ content }}
+
+    <div class="content-wrapper">
+      <div class="sidebar style-2">
+
+{%- comment -%}       
+
+      {% include dirname.liquid dir='/Folder%201/Fofghgflder%201.1/' %} 
+      <hr>
+ {%- endcomment -%} {%- comment -%}
+
+      {% include list.html dir='/' %} 
+
+      <hr>
+      {% include list.html dir='/Folder%201/' %} 
+      <hr>
+      {% include list.html dir='/Folder%201/Folder%201.1/' %}  {%- endcomment -%}
+
+        {%- comment -%} {% include recursive.html dir='/' %}   
+        <hr> {%- endcomment -%}
+
+        <h2>Nav</h2>
+        {% include nav.html %}   
+        <hr>
+        {%- comment -%}
+        <h3>Toc</h3>
+        <div id="tocs">
+          {% include toc2.html html=content h_min=2 id='toc' class='nav.flex-column.tocnav' item_class='nav-item' anchor_class='nav-link' %}
         </div>
-   
+         <hr>
+        <h2>Nav</h2>
+        {% include sidebar.html %} 
+                        {%- endcomment -%}
+      </div>
+
+      <div class="main" data-spy="scroll" data-target="#toc" data-offset="80" >
+      
+        {% include breadcrumbs.html %}  
+        <hr>
+        {{ content }}              
+      </div>
+
+    </div>
+
+    {% include footer-js.html %}             
+
   </body>
 </html>

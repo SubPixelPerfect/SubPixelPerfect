@@ -1,2 +1,9 @@
 #theme: jekyll-theme-tactile
 repository: SubPixelPerfect/SubPixelPerfect.github.io
+
+# Markdown renderer config
+kramdown:
+  hard_wrap: true
+
+sass:
+  style: compact # possible values: nested expanded compact compressed  
