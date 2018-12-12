@@ -24,9 +24,13 @@
         {%- comment -%} {% include recursive.html dir='/' %}   
         <hr> {%- endcomment -%}
 
+
         <h2>Nav</h2>
-        {% include nav.html %}   
+        {%- comment -%} {% include nav.html %}    {%- endcomment -%}
         <hr>
+
+
+
         {%- comment -%}
         <h3>Toc</h3>
         <div id="tocs">
@@ -40,7 +44,7 @@
 
       <div class="main" data-spy="scroll" data-target="#toc" data-offset="80" >
       
-        {% include breadcrumbs.html %}  
+        {%- comment -%} {% include breadcrumbs.html %}   {%- endcomment -%}
         <hr>
         {{ content }}              
       </div>
