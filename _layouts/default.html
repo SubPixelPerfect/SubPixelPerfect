@@ -10,11 +10,13 @@
         <div class="main-content">      
           {% include breadcrumbs.liquid %} 
           
-          {{ content }}   
-          
+             
+          {%- comment -%}  
           {% if page.isIndex %}
             {% include folderindex.liquid %}
-          {% endif %}
+          {% endif %} 
+          
+          {{ content }}  
 
           {% if page.isSiteMap %}
           <div class="tree-wrapper">
@@ -23,6 +25,8 @@
           {% endif %}
 
           {% include disqus-comments.html %}
+          
+          {%- endcomment -%}
         </div>
       </div>
 
