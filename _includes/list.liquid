@@ -1,1 +1,12 @@
-...
+
+
+{% if page.url != '/' %}
+    {%- assign _currentFolderPages = _pages | where: "dir", page.dir -%}
+{%- endif -%}
+
+{%- for p in _currentFolderPages -%}
+    {%- if p.name == "index.md" -%}{%- continue -%}{%- endif -%}        
+    {%- if p.hidden -%}{%- continue -%}{%- endif -%}
+    {%- assign p['title'] = "zzz" -%}
+    {%- include page-preview.liquid page = p -%}        
+{%- endfor -%}
