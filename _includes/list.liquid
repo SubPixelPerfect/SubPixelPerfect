@@ -1,4 +1,9 @@
+{%- comment -%} 
 
+    на главной индекс показывает только избанное
+    на внутренних индекс показывает всё в текущей папке 
+
+{%- endcomment -%}
 
 {% if page.url != '/' %}
     {%- assign _currentFolderPages = _pages | where: "dir", page.dir -%}
