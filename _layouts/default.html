@@ -11,12 +11,10 @@
           {% include breadcrumbs.liquid %} 
                        
           {{ content }}  
-          
-          {%- comment -%}  
+         
           {% if page.isIndex %}
             {% include folderindex.liquid %}
           {% endif %}
-          {%- endcomment -%}
 
           {% if page.isSiteMap %}
           <div class="tree-wrapper">

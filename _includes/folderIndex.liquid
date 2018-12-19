@@ -6,6 +6,9 @@
 
 {%- endcomment -%}
 
+--
+
+{%- comment -%}  
 
 {% if page.url != '/' %}
     {%- assign _currentFolderPages = _pages | where: "dir", page.dir -%}
@@ -17,4 +20,5 @@
     {%- assign p['title'] = "zzz" -%}
     {%- include page-preview.liquid page = p -%}        
 {%- endfor -%}
-{%- comment -%}  {%- endcomment -%}
+
+{%- endcomment -%}
