@@ -1,5 +1,5 @@
-{% include init.liquid %}  
 <!doctype html>
+{% include init.liquid %}
 <html>    
   {%- include head.html -%}
   <body>
@@ -11,7 +11,7 @@
           {% include breadcrumbs.liquid %} 
           
           {{ content }}      
-          
+          {%- comment -%}  
           {% if page.isIndex %}
             {% include folderindex.liquid %}
           {% endif %}
@@ -23,6 +23,7 @@
           {% endif %}
 
           {% include disqus-comments.html %}
+          {%- endcomment -%}
         </div>
       </div>
 
@@ -38,8 +39,7 @@
           {% include tree.liquid dir=page.dir ulClass=".nav.flex-column.tree-nav" liClass=".nav-item" aClass=".nav-link" %}
         {%- endcomment -%}
 
-        {%- comment -%}  
-        {%- endcomment -%}
+        {%- comment -%} {%- endcomment -%}
         {% include nav.html %}
 
       </div>       
