@@ -10,8 +10,8 @@
         <div class="main-content">      
           {% include breadcrumbs.liquid %} 
           
-          {{ content }}      
-          {%- comment -%}  
+          {{ content }}   
+          
           {% if page.isIndex %}
             {% include folderindex.liquid %}
           {% endif %}
@@ -23,7 +23,6 @@
           {% endif %}
 
           {% include disqus-comments.html %}
-          {%- endcomment -%}
         </div>
       </div>
 
