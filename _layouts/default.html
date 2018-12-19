@@ -12,11 +12,11 @@
                        
           {{ content }}  
           
+          {%- comment -%}  
           {% if page.isIndex %}
             {% include folderindex.liquid %}
-          {% endif %} 
-          
-          {%- comment -%}  
+          {% endif %}
+          {%- endcomment -%}
 
           {% if page.isSiteMap %}
           <div class="tree-wrapper">
@@ -25,8 +25,6 @@
           {% endif %}
 
           {% include disqus-comments.html %}
-
-          {%- endcomment -%}
         </div>
       </div>
 
