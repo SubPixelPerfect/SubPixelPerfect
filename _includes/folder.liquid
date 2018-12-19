@@ -1,0 +1,65 @@
+
+{%- comment -%} 
+
+generates markdown for a single folder
+outputs nothing - result stored in {{_folderMd}} variable
+
+following variable have to be set:
+_indexes                - list of all index.md pages sorted by filename
+_pages                  - sorted list of all non-index pages
+_NL                     - new line
+_dir                    - folder to output
+_blRecursion            - if set to true will put <<dir>> tag after subfolder link 
+                           and wil count how many tags was added 
+                           in case 0 tags was added - will set this flag to false
+_indent                 - placed before each line         
+_blHideFiles            - prevents files output
+_blHideDistantRelatives - prevents subfolder walking for distant relatives
+_tagsCount              - incremented each tome subfolder tag added
+
+{%- endcomment -%}
+{%- assign _folderMd = '' -%}
+
+{%- comment -%} subfolders {%- endcomment -%}
+{%- for item in _indexes -%}
+    {%- assign dirParts = item.dir | split: _dir -%}
+    {%- if dirParts.size == 2 -%}
+        {%- assign subPathFolders = dirParts[1] | split: '/' -%}       
+        {%- if subPathFolders.size == 1 -%}
+
+            {%- assign aLink = '{:.folder}' -%}{%- if item.url == page.url -%}{%- assign aLink = '{:.active.folder}' -%}{%- endif -%}
+
+            {%- comment -%} 
+            decide if subfolder contents has to be outputed or not
+            {%- endcomment -%}
+            {%- assign task = '' -%}
+            {%- if _blRecursion-%}
+
+                {%- assign _blIsCloseRelative = true -%}
+                {%- if _blHideDistantRelatives -%}
+                    {%- assign r = page.dir | split: item.dir  -%}
+                    {%- if r.size == 1 -%}{%- assign _blIsCloseRelative = false -%}{%- endif -%} 
+                {%- endif -%}
+
+                {%- if _blIsCloseRelative -%}
+                    {%- capture task -%}<<{{item.dir}}>>{%- endcapture -%}{%- assign _tagsCount = _tagsCount | plus: 1 -%}
+                {%- endif -%} 
+
+            {%- endif -%}
+
+            {% capture _folderMd %}{{_folderMd}}{{_indent}} - [{{flag}} {{dirParts | last | replace: '/', '' | url_decode }}]({{item.url}}){{aLink}}{{_NL}}{{task}}{% endcapture %}
+   
+        {%- endif -%}
+    {%- endif -%} 
+{%- endfor -%}
+
+{%- comment -%} files {%- endcomment -%}
+{%- unless _blHideFiles -%}
+    {%- assign _filesInThisFolder = _pages | where:"dir", _dir -%}
+    {%- for file in _filesInThisFolder -%}
+        {%- assign aLink = '{:.file}' -%}{%- if file.url == page.url -%}{%- assign aLink = '{:.active.file}' -%}{%- endif -%}
+        {% capture _folderMd %}{{_folderMd}}{{_indent}} - [{{file.title}}]({{file.url}}){{aLink}}{{_NL}}{% endcapture %}
+    {%- endfor -%} 
+{%- endunless -%}
+
+{% capture _folderMd %}{{_folderMd}}{{NL}}{% endcapture %}

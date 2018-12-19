@@ -1,16 +1,17 @@
 
-{%- assign arr = '' | split: ',' -%}
-{%- assign arr1 = 'a,b' | split: ',' -%}
-{%- assign arr2 = 'c,d' | split: ',' -%}
 
+
+{%- assign arr1 = '/' | split: ',' -%}
 {%- assign arr = arr | concat: arr1 -%}
-{%- assign arr = arr | concat: arr2 -%}
 
-{% for item in arr %}   
-    {{item}}
+
+
+{% for i in (0..1000000000) %} 
+    {%- if i == 5 -%}
+        {% break  %}
+    {%- endif -%}
+    {{i}}
 {% endfor %} 
-
-{{arr[0]}}
 
 
 {%- comment -%} 

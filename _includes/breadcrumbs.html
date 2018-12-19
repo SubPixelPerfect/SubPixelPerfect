@@ -1,9 +1,0 @@
-<a href = "/"> Home</a> &raquo;
-{% assign path = page.dir | split: '/' %}
-{% assign folderPath = '/' %}
-{% for i in (2..path.size) %}
-    {% assign j = i | minus: 1 %}
-    {% assign folderPath = folderPath | append: path[j] | append: '/' %} 
-    <a href = "{{ folderPath }}">{{ path[j]  | url_decode  }}</a> &raquo;
-{% endfor %}
-{{ page.title }}

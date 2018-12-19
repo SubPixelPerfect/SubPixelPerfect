@@ -1,0 +1,35 @@
+{%- comment -%} 
+{%- if page.url != '/' -%}
+    {%- assign bc = '<a href = "/">Home</a>' -%}
+    {%- assign path = page.dir | split: '/' -%}
+    {%- assign folderPath = '/' -%}
+    {%- for i in (2..path.size) -%}
+        {%- assign j = i | minus: 1 -%}
+        {%- assign folderPath = folderPath | append: path[j] | append: '/' -%}
+        {%- if i==path.size and page.name == 'index.md' -%}
+            {%- capture bc -%}{{bc}} &raquo; {{ path[j] | url_decode  }}{%- endcapture -%}{%- continue -%}
+        {%- endif -%}
+        {%- capture bc -%}{{bc}} &raquo; <a href = "{{ folderPath }}">{{ path[j] | url_decode  }}</a>{%- endcapture -%}
+    {%- endfor -%}
+    {{bc}}<hr>
+{%- endif -%} 
+{%- endcomment -%}
+
+{%- if page.url != '/' -%}
+    {%- assign arr = '<a href = "/">Home</a>' | split: '?' -%}
+    {%- assign dirparts = page.dir | split: '/' -%}
+    {%- assign bcPath = '/' -%}
+    {%- for i in (2..dirparts.size) -%}
+        {%- assign j = i | minus: 1 -%}
+        {%- assign bcPath = bcPath | append: dirparts[j] | append: '/' -%}
+        {%- if i==dirparts.size and page.name == 'index.md' -%}
+            {%- assign bc = dirparts[j] | url_decode  -%}
+        {%- else -%}
+            {%- capture bc -%}<a href = "{{ bcPath }}">{{ dirparts[j] | url_decode  }}</a>{%- endcapture -%}    
+        {%- endif -%}
+        {%- assign arr = arr | push: bc -%}
+    {%- endfor -%}
+    {{arr | join: ' &raquo; '}}
+    <hr>
+{%- endif -%}
+

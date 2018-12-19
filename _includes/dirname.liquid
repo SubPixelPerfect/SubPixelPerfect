@@ -1,7 +1,11 @@
 {% capture tocWorkspace %}
 
-{% assign path = include.dir | url_decode | split: '/' %}
-{% assign foldernameindex = path.size | minus: 1 %}
-{% assign foldername = path[foldernameindex] %}
+{% if include.dir == '/' %}
+    {% assign foldername = 'Home' %}
+{%- else -%}
+    {% assign path = include.dir | url_decode | split: '/' %}
+    {% assign foldernameindex = path.size | minus: 1 %}
+    {% assign foldername = path[foldernameindex] %}
+{%- endif -%}
 
 {% endcapture %}{{ foldername }}

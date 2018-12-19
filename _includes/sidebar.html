@@ -124,7 +124,7 @@
         
         {% for f in level1 %}
           <!-- second level folders -->
-          --- {{ f | url_decode }}  {% if f == page.dir %} * {% endif %}   <br> 
+          - {{ f | url_decode }}  {% if f == page.dir %} * {% endif %}   <br> 
 
           {% assign level2 = "" | split: '' %}
           {% for p in site.pages %}
@@ -136,7 +136,7 @@
           {% endfor %}
 
           {% for f2 in level2 %}
-          ---- --- {{ f2  | url_decode }}  {% if f2 == page.dir %} * {% endif %} <br>
+          - - {{ f2  | url_decode }}  {% if f2 == page.dir %} * {% endif %} <br>
 
           {% endfor %}
 

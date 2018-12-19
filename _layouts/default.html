@@ -1,57 +1,53 @@
+{% include init.liquid %}  
 <!doctype html>
-<html>
-  
+<html>    
   {%- include head.html -%}
-
   <body>
 
     <div class="content-wrapper">
-      <div class="sidebar style-2">
-
-{%- comment -%}       
-
-      {% include dirname.liquid dir='/Folder%201/Fofghgflder%201.1/' %} 
-      <hr>
- {%- endcomment -%} {%- comment -%}
-
-      {% include list.html dir='/' %} 
-
-      <hr>
-      {% include list.html dir='/Folder%201/' %} 
-      <hr>
-      {% include list.html dir='/Folder%201/Folder%201.1/' %}  {%- endcomment -%}
-
-        {%- comment -%} {% include recursive.html dir='/' %}   
-        <hr> {%- endcomment -%}
-
-
-        <h2>Nav</h2>
-        {% include nav.html %}   
-        <hr>
-
-
-
-        {%- comment -%}
-        <h3>Toc</h3>
-        <div id="tocs">
-          {% include toc2.html html=content h_min=2 id='toc' class='nav.flex-column.tocnav' item_class='nav-item' anchor_class='nav-link' %}
-        </div>
-         <hr>
-        <h2>Nav</h2>
-        {% include sidebar.html %} 
-                        {%- endcomment -%}
-      </div>
-
+    
       <div class="main" data-spy="scroll" data-target="#toc" data-offset="80" >
-      
-        {% include breadcrumbs.html %}  
-        <hr>
-        {{ content }}              
+        <div class="main-content">      
+          {% include breadcrumbs.liquid %} 
+          
+          {{ content }}      
+          
+          {% if page.isIndex %}
+            {% include folderindex.liquid %}
+          {% endif %}
+
+          {% if page.isSiteMap %}
+          <div class="tree-wrapper">
+            {% include tree2.liquid depth=7 root='/' hideDistantRelatives=false %}  
+          </div>
+          {% endif %}
+
+          {% include disqus-comments.html %}
+        </div>
       </div>
 
+      <div class="sidebar">
+        <img src="/assets/images/openmind-logo.png" style="width: 250px;" alt="">
+        <hr>
+        <div class="tree-wrapper">
+          {% include tree2.liquid depth=7 root='/'  hideDistantRelatives=true %}  
+        </div>
+        <hr>
+
+        {%- comment -%}  
+          {% include tree.liquid dir=page.dir ulClass=".nav.flex-column.tree-nav" liClass=".nav-item" aClass=".nav-link" %}
+        {%- endcomment -%}
+
+        {%- comment -%}  
+        {%- endcomment -%}
+        {% include nav.html %}
+
+      </div>       
+
+      
     </div>
 
-    {% include footer-js.html %}             
+    {% include footer-js.html %}   
 
   </body>
 </html>
