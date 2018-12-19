@@ -9,14 +9,14 @@
       <div class="main" data-spy="scroll" data-target="#toc" data-offset="80" >
         <div class="main-content">      
           {% include breadcrumbs.liquid %} 
+                       
+          {{ content }}  
           
-             
-          {%- comment -%}  
           {% if page.isIndex %}
             {% include folderindex.liquid %}
           {% endif %} 
           
-          {{ content }}  
+          {%- comment -%}  
 
           {% if page.isSiteMap %}
           <div class="tree-wrapper">
@@ -25,7 +25,7 @@
           {% endif %}
 
           {% include disqus-comments.html %}
-          
+
           {%- endcomment -%}
         </div>
       </div>
