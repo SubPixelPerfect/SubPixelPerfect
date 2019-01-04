@@ -11,6 +11,12 @@
           {% include breadcrumbs.liquid %} 
                        
           {{ content }}  
+
+          
+          {% if page.isTagsPage %}
+            {% include tags.liquid %}
+          {% endif %}
+
          
           {% if page.isIndex %}
             {% include list.liquid %}
@@ -23,6 +29,8 @@
           {% endif %}
 
           {% include disqus-comments.html %}
+
+
         </div>
       </div>
 

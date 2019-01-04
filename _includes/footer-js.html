@@ -16,15 +16,32 @@ crossorigin="anonymous"></script> -->
     $(document).ready(function(){
 
         //scroll
-           var scrollTarget = $('.main');
-           $(document).on('click', '#toc a[href^="#"]', function (event) {
-              event.preventDefault();
-              var hash = $(this).attr('href').toString();
-              var el = $(hash);
-              var targetPos = scrollTarget.scrollTop()+el.position().top;
-              scrollTarget.animate({scrollTop: targetPos  }, 500 );
-             history.pushState(null,null, hash);
-           });
+        var scrollTarget = $('.main');
+        $(document).on('click', '#toc a[href^="#"]', function (event) {
+            event.preventDefault();
+            var hash = $(this).attr('href').toString();
+            var el = $(hash);
+            var targetPos = scrollTarget.scrollTop()+el.position().top;
+            scrollTarget.animate({scrollTop: targetPos  }, 500 );
+            history.pushState(null,null, hash);
+        });
+
+
+        // shadertoy
+        var els = document.querySelectorAll("a[href^='https://www.shadertoy.com/view/']");
+        els.forEach(function(el){
+            var toy = el.getAttribute('href').split('/').slice(-1)[0];
+            el.insertAdjacentHTML('afterend', '<iframe src="https://www.shadertoy.com/embed/'+toy+'?gui=false&paused=false&muted=true" width="100%" height="360" frameborder="0" allowfullscreen="allowfullscreen" ></iframe >');
+            el.parentNode.removeChild(el);
+        });
+
+        var match = $( "p:contains('shadertoy.com/view/')" );
+        match.each(function(i, el){
+            var toy = $(el).text().split('/').slice(-1)[0];
+            el.insertAdjacentHTML('afterend', '<iframe src="https://www.shadertoy.com/embed/'+toy+'?gui=false&paused=false&muted=true" width="100%" height="360" frameborder="0" allowfullscreen="allowfullscreen" ></iframe >');
+            el.parentNode.removeChild(el);
+        });
+
 
     });
 

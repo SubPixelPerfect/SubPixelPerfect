@@ -4,6 +4,9 @@ tags: [A, B, 'C C' ]
 
 # Jekyll Tips & Tricks
 
+Few notes I made while making this jekyll theme.
+<!--cut-->
+
 ## Live coding using live.js
 
 [Live.js](http://livejs.com/) makes sure you're always looking at the latest version of the page you're working on.
@@ -11,6 +14,7 @@ tags: [A, B, 'C C' ]
 When includes Live.js monitors the current page including local CSS and JavaScript by sending consecutive HEAD requests to the server. Changes to CSS will be applied dynamically and HTML or JavaScript changes will reload the page.
 
 Obviously it has to be disabled on production, this can be done using `jekyll.environment` variable
+
 
 The default value for `JEKYLL_ENV` is `development`. 
 GitHub Pages sets the `JEKYLL_ENV` to `production`.
@@ -24,7 +28,6 @@ So to make live.js work only in development environment include it this way:
 {% endif %}
 ```
 {% endraw %}
-
 
 
 
@@ -127,8 +130,9 @@ _face_{:.material-icons} _link_{:.material-icons} _label_{:.material-icons}
 
 Jekyll uses the Liquid templating language to process templates.
 
-https://shopify.github.io/liquid/filters/newline_to_br/
-https://jekyllrb.com/docs/liquid/
+[Liquid Syntax Reference](https://shopify.github.io/liquid/filters/newline_to_br/)
+[Jekyll Liquid Syntax Reference](https://jekyllrb.com/docs/liquid/)
+[Cheatsheet](https://devhints.io/jekyll)
 
 ## Liquid Snippets
 
@@ -170,5 +174,8 @@ While loops not present in liquid but you can do following:
 {% endraw %}
 ```
 
-
 ## 
+
+## Markdown 
+
+[Basic Syntax](https://www.markdownguide.org/basic-syntax)

@@ -1,0 +1,13 @@
+
+{%- assign _allTags = _pages | map: 'tags' | uniq | compact | sort_natural -%}
+
+{%- for tag in _allTags -%}
+    
+    {%- assign tagPages = _pages | where: "tags", tag -%}
+    <div style="padding: 20px; margin-bottom: 10px; background: #00000019; border-radius: 8px; ">
+        <strong>{{tag}}</strong> <span class="badge badge-pill badge-secondary">{{tagPages.size}}</span><br>
+        {%- for p in tagPages -%}
+            <a href="{{p.url}}">{{p.title}} &raquo;</a><br>
+        {%- endfor -%}
+    </div>
+{%- endfor -%}

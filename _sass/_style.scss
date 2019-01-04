@@ -162,7 +162,8 @@ $tree-lines-shift: 6px;
     >ul{padding-left: 0;}
 
     li>a{  
-        //font-size: .85em;
+        &.active{color: #F0F;}
+        &:hover{ text-decoration: none; }          
         &.folder{ white-space: nowrap; }
         position: relative; 
         display: block;  
@@ -170,7 +171,9 @@ $tree-lines-shift: 6px;
         padding: 3px;
         padding-left:  24px;
         line-height: 1.1em;
-        // icon codes: https://github.com/google/material-design-icons/blob/master/iconfont/codepoints
+
+        // icon codes: 
+        // https://github.com/google/material-design-icons/blob/master/iconfont/codepoints
         &.file::before{content: '\e8d2';} 
         &.folder::before{content: '\e2c7';}
         &::before{
@@ -193,23 +196,12 @@ $tree-lines-shift: 6px;
             //-webkit-font-smoothing: none;
         }
     }
-    a.active{
-        color: #F0F;
-    }
-    a:hover{
-        text-decoration: none;
-    }    
-    .material-icons { 
-        vertical-align: text-bottom;
-        font-size: 18px;
-    }
-
 
     li{ position: relative;
         &::before, &::after{            
             content: '';
             position: absolute; 
-            background-color: #555;
+            background-color: #ffffff1a;
         }
         &::before{
             width: 1px;
