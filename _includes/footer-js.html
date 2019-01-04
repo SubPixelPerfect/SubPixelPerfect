@@ -43,6 +43,21 @@ crossorigin="anonymous"></script> -->
         });
 
 
+        // video
+        var els = document.querySelectorAll("video[src$='.mp4']"); // all vidos where src laue ends with .mp4
+        els.forEach(function(el){
+            el.setAttribute('controls', '');
+            el.setAttribute('autoplay', '');
+            el.setAttribute('loop', '');
+            el.setAttribute('muted', '');
+            // var toy = el.getAttribute('href').split('/').slice(-1)[0];
+            // el.insertAdjacentHTML('afterend', '<iframe src="https://www.shadertoy.com/embed/'+toy+'?gui=false&paused=false&muted=true" width="100%" height="360" frameborder="0" allowfullscreen="allowfullscreen" ></iframe >');
+            // el.parentNode.removeChild(el);
+        });
+
+
+
+
     });
 
 </script>
