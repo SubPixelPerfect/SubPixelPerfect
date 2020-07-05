@@ -1,5 +1,0 @@
----
-isTagsPage: true
----
-
-# Tags

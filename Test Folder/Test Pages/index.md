@@ -1,4 +1,0 @@
----
-dirIndex: true
-isIndex: true
----

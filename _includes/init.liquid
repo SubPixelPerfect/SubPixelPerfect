@@ -1,5 +1,0 @@
-
-{%- assign _indexes = site.html_pages | where:"name", "index.md" | sort: 'dir' -%}
-{%- assign _pages = site.html_pages | where_exp:"item", "item.name != 'index.md'" | sort:"date", "first" | reverse -%}
-{% capture _NL %}
-{% endcapture %}

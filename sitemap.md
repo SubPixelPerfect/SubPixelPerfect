@@ -1,4 +1,0 @@
----
-isSiteMap: true
----
-# Site Map
