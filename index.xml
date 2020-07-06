@@ -10,5 +10,23 @@
 	<atom:link href="https://subpixelperfect.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>B</title>
+      <link>https://subpixelperfect.github.io/b/</link>
+      <pubDate>Mon, 06 Jul 2020 03:00:16 +0200</pubDate>
+      
+      <guid>https://subpixelperfect.github.io/b/</guid>
+      <description>sdf</description>
+    </item>
+    
+    <item>
+      <title>A</title>
+      <link>https://subpixelperfect.github.io/a/</link>
+      <pubDate>Mon, 06 Jul 2020 02:23:08 +0200</pubDate>
+      
+      <guid>https://subpixelperfect.github.io/a/</guid>
+      <description>sdf</description>
+    </item>
+    
   </channel>
 </rss>
