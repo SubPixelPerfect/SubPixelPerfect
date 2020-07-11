@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Openmind.Media</title>
-    <link>https://subpixelperfect.github.io/</link>
+    <link>https://openmind.media/</link>
     <description>Recent content on Openmind.Media</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://subpixelperfect.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://openmind.media/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>B</title>
-      <link>https://subpixelperfect.github.io/b/</link>
+      <link>https://openmind.media/b/</link>
       <pubDate>Mon, 06 Jul 2020 03:00:16 +0200</pubDate>
       
-      <guid>https://subpixelperfect.github.io/b/</guid>
+      <guid>https://openmind.media/b/</guid>
       <description>sdf</description>
     </item>
     
     <item>
       <title>A</title>
-      <link>https://subpixelperfect.github.io/a/</link>
+      <link>https://openmind.media/a/</link>
       <pubDate>Mon, 06 Jul 2020 02:23:08 +0200</pubDate>
       
-      <guid>https://subpixelperfect.github.io/a/</guid>
+      <guid>https://openmind.media/a/</guid>
       <description>sdf</description>
     </item>
     
