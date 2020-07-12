@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>OpenMind.Media</title>
+    <title>Openmind.Media</title>
     <link>https://openmind.media/</link>
-    <description>Recent content on OpenMind.Media</description>
+    <description>Recent content on Openmind.Media</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -16,7 +16,7 @@
       <pubDate>Mon, 06 Jul 2020 03:00:16 +0200</pubDate>
       
       <guid>https://openmind.media/b/</guid>
-      <description>Welcome to Open Mind This is going to be awesome</description>
+      <description>Welcome to Open Mind </description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       <pubDate>Mon, 06 Jul 2020 02:23:08 +0200</pubDate>
       
       <guid>https://openmind.media/a/</guid>
-      <description>new setup works !</description>
+      <description>testing auto publish new setup works</description>
     </item>
     
   </channel>
